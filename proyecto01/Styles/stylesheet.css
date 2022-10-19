@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+* {
+    font-family: "Asap", sans-serif;
+}
+#ProfilePic {
+    margin: 0% 5%;
+    border-radius: 15%;
+}
+nav {
+    position: sticky;
+    top: 0%;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}
+header > * {
+    padding: 0% 1%; 
+}
+
+#ProfilePic{
+    padding-left: 7%;
+}
+
+body #Cuerpo-Info {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+#Cuerpo-Info :nth-child(n){
+    grid-column: 2;
+    grid-row: auto;
+}
+
+#formulario{
+    padding-left: 5%;
+}
+
+#Video{
+    margin-left: -12.5%;
+}
+/*
+h1 {
+    font-style: bold;
+    color: #72c9f7;
+}
+
+h5 {
+    margin-left: 25%;
+}
+ section > ul > * {
+    margin-left: 50%;
+}*/
+a {
+    text-decoration: none;
+    color: white;
+    cursor: default;
+}
+#AccesosRapidos {
+    text-align: center;
+    background-color: #72c9f7;
+    padding: 1%;
+}
+
+#AccesosRapidos > li {
+    display: inline;
+    margin-right: 5%;
+}
+
+#Parrafo-Perfil {
+    text-justify:auto ; 
+}
