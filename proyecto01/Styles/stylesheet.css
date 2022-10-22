@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
+
 * {
     font-family: "Asap", sans-serif;
 }
+
 #ProfilePic {
     margin: 0% 5%;
     border-radius: 15%;
 }
+
 nav {
     position: sticky;
     top: 0%;
@@ -14,61 +17,80 @@ nav {
 header {
     display: flex;
     justify-content: center;
-    margin: 5%;
-}
-header > * {
-    padding: 0% 1%; 
+    padding: 02%;
 }
 
-#ProfilePic{
+th,td {
+    width: 250px;
+    height: 150px;
+}
+
+header>* {
+    padding: 0% 1%;
+}
+
+#ProfilePic {
     padding-left: 7%;
 }
 
 body #Cuerpo-Info {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0% 25%;
 }
 
-#Cuerpo-Info :nth-child(n){
+
+/* #Cuerpo-Info :nth-child(n) {
     grid-column: 2;
     grid-row: auto;
-}
+} */
 
-#formulario{
+#formulario {
     padding-left: 5%;
 }
 
-#Video{
+#Video {
     margin-left: -12.5%;
 }
-/*
-h1 {
-    font-style: bold;
-    color: #72c9f7;
+
+.Listas-Info *{
+    margin: 1rem;
 }
 
-h5 {
-    margin-left: 25%;
-}
- section > ul > * {
-    margin-left: 50%;
-}*/
 a {
     text-decoration: none;
     color: white;
     cursor: default;
 }
+
 #AccesosRapidos {
     text-align: center;
     background-color: #72c9f7;
+    margin: 0%;
     padding: 1%;
 }
 
-#AccesosRapidos > li {
+#AccesosRapidos>li {
     display: inline;
     margin-right: 5%;
 }
 
 #Parrafo-Perfil {
-    text-justify:auto ; 
+    text-justify: auto;
 }
+
+#Correo {
+    list-style-image: url("Media\envelope.svg");
+}
+
+.Secciones:hover {
+    box-shadow: 1rem black;
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  }

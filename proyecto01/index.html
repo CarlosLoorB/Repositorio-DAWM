@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <header>
+    <header >
+        <div></div>
         <img src="Media\FotoPerfil.jpg" alt="Foto de Perfil" width="100" id="ProfilePic" />
         <div id="Informacion-Basica">
             <h1>Carlos Loor</h1>
@@ -18,8 +19,8 @@
     </header>
     <nav id="Navegacion">
         <ul id="AccesosRapidos">
-            <li><a href="#ProfilePic">Formación Académica</a></li>
-            <li><a href="#tabla">Certificados</a></li>
+            <li class="Secciones"><a href="#ProfilePic">Formación Académica</a></li>
+            <li><a href="#Certificados">Certificados</a></li>
             <li>
                 <a href="#Certificados">Proyectos Realizados</a>
             </li>
@@ -36,7 +37,18 @@
                 <tr>
                     <th>Nivel de Estudios</th>
                     <th>Plantel Educativo</th>
+                    <th>Años de Estudio</th>
                     <th>Ubicación</th>
+                </tr>
+                <tr>
+                    <th>Primer Nivel</th>
+                    <td>Niños del nuevo siglo</td>
+                    <td>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0037366898136!2d-79.95624178605131!3d-2.152254798431162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d7257b92edeaf%3A0xf30c5f4b6719179d!2sUnidad%20Educativa%20Particular%20Polit%C3%A9cnico%20-%20COPOL!5e0!3m2!1ses!2sec!4v1665606904290!5m2!1ses!2sec"
+                            style="border: 0" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </td>
                 </tr>
                 <tr>
                     <th>Segundo Nivel</th>
@@ -44,7 +56,7 @@
                     <td>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.0037366898136!2d-79.95624178605131!3d-2.152254798431162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d7257b92edeaf%3A0xf30c5f4b6719179d!2sUnidad%20Educativa%20Particular%20Polit%C3%A9cnico%20-%20COPOL!5e0!3m2!1ses!2sec!4v1665606904290!5m2!1ses!2sec"
-                            width="100" height="100" style="border: 0" allowfullscreen="" loading="lazy"
+                            style="border: 0" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </td>
                 </tr>
@@ -54,7 +66,7 @@
                     <td>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15948.06066149371!2d-79.97883300289686!3d-2.1478802000000035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72f925e5bfdb%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses!2sec!4v1665607083640!5m2!1ses!2sec"
-                            width="100" height="100" style="border: 0" allowfullscreen="" loading="lazy"
+                            style="border: 0" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </td>
                 </tr>
@@ -62,7 +74,7 @@
         </section>
         <section id="Certificados">
             <h4>Certificados</h4>
-            <ul>
+            <ul class="Listas-Info">
                 <li>Diploma de Bachillerato Internacional</li>
                 <li>Certificado de Ingles TOEFL</li>
                 <li>Certificado de Office 2020</li>
@@ -74,9 +86,9 @@
         </section>
         <section id="Contacto">
             <h4>Metodos de Contacto</h4>
-            <ul>
-                <li>0997059506</li>
-                <li>caraloor@espol.edu.ec</li>
+            <ul class="Listas-Info">
+                <li id="Numero-whatasapp"> 0997059506</li>
+                <li id="Correo">caraloor@espol.edu.ec</li>
             </ul>
             <section id="formulario">
                 <h5>Contactame</h5>
@@ -92,7 +104,7 @@
         </section>
         <section id="Idiomas">
             <h4>Idiomas</h4>
-            <ul>
+            <ul class="Listas-Info">
                 <li>Español - Nativo</li>
                 <li>Inglés - Avanzado</li>
             </ul>
