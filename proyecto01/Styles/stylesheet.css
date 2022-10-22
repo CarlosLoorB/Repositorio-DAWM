@@ -20,7 +20,8 @@ header {
     padding: 02%;
 }
 
-th,td {
+th,
+td {
     width: 250px;
     height: 150px;
 }
@@ -54,7 +55,7 @@ body #Cuerpo-Info {
     margin-left: -12.5%;
 }
 
-.Listas-Info *{
+.Listas-Info * {
     margin: 1rem;
 }
 
@@ -81,16 +82,20 @@ a {
 }
 
 #Correo {
-    list-style-image: url("Media\envelope.svg");
+    list-style-image: image("Media\envelope.svg");
 }
 
 .Secciones:hover {
-    box-shadow: 1rem black;
+    text-shadow: 5px 5px 2px gray;
+    color: gray;
 }
 
 
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
+@media only screen and (max-width: 900px) {
+    body #Cuerpo-Info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0% 15%;
     }
-  }
+}
