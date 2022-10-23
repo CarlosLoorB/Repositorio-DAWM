@@ -52,7 +52,7 @@ body #Cuerpo-Info {
 }
 
 #Video {
-    margin-left: -12.5%;
+  /*   margin-left: -12.5%; */
 }
 
 .Listas-Info * {
@@ -88,6 +88,53 @@ a {
 .Secciones:hover {
     text-shadow: 5px 5px 2px gray;
     color: gray;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.Titulo-Form {
+    margin-bottom: 0.25rem;
+}
+
+.Text-Form {
+    margin-bottom: 0.75rem;
+}
+
+#formulario input {
+    margin-right: 75%;
+}
+
+#formulario textarea {
+    margin-right: 50%;
+}
+
+button {
+    margin: 0% 40%;
+}
+
+#submit {
+    align-self: center;
+}
+
+#Redes-Sociales {
+    position: sticky;
+    bottom: 0.5%;
+    left: 0%;
+}
+
+#Iconos-Redes * {
+ padding: 0rem 0.1rem;
+}
+
+.icon {
+    height: 2rem;
+}
+h5 {
+    margin: 0.5rem 0rem;
+    font-size:medium;
 }
 
 

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header >
+    <header>
         <div></div>
         <img src="Media\FotoPerfil.jpg" alt="Foto de Perfil" width="100" id="ProfilePic" />
         <div id="Informacion-Basica">
@@ -23,9 +23,9 @@
             <li class="Secciones"><a href="#Certificados">Certificados</a></li>
             <li class="Secciones">
                 <a href="#Certificados">Proyectos Realizados</a>
-            </li >
+            </li>
             <li class="Secciones"><a href="#Video">Contacto</a></li>
-            <li  class="Secciones"><a href="#Perfil">Perfil</a></li>
+            <li class="Secciones"><a href="#Perfil">Perfil</a></li>
             <li class="Secciones"><a href="#Idiomas">Idiomas</a></li>
             <li class="Secciones"><a href="#Referencias">Referencias</a></li>
         </ul>
@@ -85,7 +85,7 @@
         </section>
         <section id="Proyectos-Realizados">
             <h4>Proyectos realizados</h4>
-            <video src="Media\Video de Presentacion.mkv" controls width="125%" id="Video"></video>
+            <video src="Media\Video de Presentacion.mkv" controls width="90%" id="Video"></video>
         </section>
         <section id="Contacto">
             <h4>Metodos de Contacto</h4>
@@ -95,14 +95,24 @@
             </ul>
             <section id="formulario">
                 <h5>Contactame</h5>
-                <p>Un formulario no recuerdo ahorita y aqui me contactan</p>
+                <form id="formulario">
+                    <label for="nombrescompletos" class="Titulo-Form">Nombres completos:</label>
+                    <input type="text" id="nombrescompletos" name="nombrescompletos" required="required"
+                        class="Text-Form" />
+                    <label for="correoelectronico" class="Titulo-Form">Correo electrónico:</label>
+                    <input type="email" id="correoelectronico" name="correoelectronico" required="required"
+                        class="Text-Form" />
+                    <label for="Mensaje" class="Titulo-Form">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="10" cols="50" class="Text-Form"></textarea>
+                    <button type="submit" name="enviar">Enviar</button>
+                </form>
             </section>
         </section>
         <section id="Perfil">
             <h4>Perfil</h4>
-            <span id="Parrafo-Perfil">Profesional en desarrollo, con una mentalidad competitiva y alta 
-                capacidad de aprendizaje y adaptación. Dispuesto a tomar decisiones 
-                y tareas dentro de una organización de la manera mas eficiente y 
+            <span id="Parrafo-Perfil">Profesional en desarrollo, con una mentalidad competitiva y alta
+                capacidad de aprendizaje y adaptación. Dispuesto a tomar decisiones
+                y tareas dentro de una organización de la manera mas eficiente y
                 con el mayor beneficio para todos </span>
         </section>
         <section id="Idiomas">
@@ -116,6 +126,16 @@
             <h4>Referencias</h4>
             <span>Disponibles bajo petición</span>
         </section>
+    </section>
+    <section id="Redes-Sociales">
+        <h5>Redes Sociales:</h5>
+        <div id="Iconos-Redes">
+            <a href="https://github.com/CarlosLoorB"><img src="Media\github.svg" alt="Icono-Github" class="icon"></a>
+            <a href="https://www.facebook.com/carmen.silva.79069/"><img src="Media\facebook.svg"
+                    alt="Icono-Facebook" class="icon"></a>
+            <a href="https://www.instagram.com/carlos_loor._.0/"><img src="Media\instagram.svg" alt="Icono-Instagram" class="icon"></a>
+        </div>
+
     </section>
 </body>
 
