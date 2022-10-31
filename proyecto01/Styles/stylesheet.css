@@ -1,11 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap&display=swap");
 
+body {
+    margin: 0;
+}
+
+#Nombre {
+    color: #72c9f7;
+}
+
 * {
     font-family: "Asap", sans-serif;
 }
 
 #ProfilePic {
-    margin: 0% 5%;
+    width: 10%;
+    height: auto;
     border-radius: 15%;
 }
 
@@ -26,13 +35,10 @@ td {
     height: auto;
 }
 
-header>* {
+header * {
     padding: 0% 1%;
 }
 
-#ProfilePic {
-    padding-left: 7%;
-}
 
 body #Cuerpo-Info {
     display: flex;
@@ -40,13 +46,6 @@ body #Cuerpo-Info {
     justify-content: center;
     margin: 0% 25%;
 }
-
-
-/* #Cuerpo-Info :nth-child(n) {
-    grid-column: 2;
-    grid-row: auto;
-} */
-
 
 .Listas-Info * {
     margin: 1rem;
@@ -58,6 +57,10 @@ a {
     cursor: default;
 }
 
+.Link-Interno:hover {
+    cursor: pointer;
+}
+
 #AccesosRapidos {
     text-align: center;
     background-color: #72c9f7;
@@ -65,10 +68,14 @@ a {
     padding: 1%;
 }
 
-#AccesosRapidos>li {
+
+#AccesosRapidos .Secciones {
     display: inline;
+    justify-content: space-evenly;
     margin-right: 5%;
+    padding: 1%;
 }
+
 
 #Parrafo-Perfil {
     text-justify: auto;
@@ -79,6 +86,7 @@ a {
 }
 
 .Secciones:hover {
+    cursor:pointer;
     text-shadow: 5px 5px 2px gray;
     color: gray;
 }
@@ -90,19 +98,11 @@ a {
 }
 
 .Titulo-Form {
-    margin-bottom: 0.25rem;
+    width: 100%;
 }
 
 .Text-Form {
-    margin-bottom: 0.75rem;
-}
-
-#formulario input {
-    margin-right: 75%;
-}
-
-#formulario textarea {
-    margin-right: 50%;
+    width: 100%;
 }
 
 button {
@@ -116,7 +116,8 @@ button {
 #Redes-Sociales {
     position: sticky;
     bottom: 0.5%;
-    left: 0%;
+    left: 1%;
+    margin-left: 1rem;
 }
 
 #Iconos-Redes * {
@@ -124,7 +125,7 @@ button {
 }
 
 .icon {
-    height: 2rem;
+    width: 2rem;
 }
 
 h5 {
@@ -134,10 +135,80 @@ h5 {
 
 
 @media only screen and (max-width: 900px) {
+
     body #Cuerpo-Info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0% 15%;
+        margin: 3%;
+
     }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        padding: 02%;
+    }
+
+    
+    header * {
+        align-self: center;
+    }
+
+    #ProfilePic {
+        width: 30%;
+        height: auto;
+        border-radius: 15%;
+    }
+
+
+    #AccesosRapidos {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1%;
+    }
+
+
+
+/*     #AccesosRapidos li {
+        width: 25%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    .Secciones {
+        width: 25%;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+   #AccesosRapidos li:last-of-type {
+        width: 90%;
+    }
+
+    iframe {
+        width: 100%;
+        height: 50%;
+    }
+
+    a {
+        margin: 2% 0%;
+    }
+
+    body {
+        font-size: smaller;
+    }
+
+    #Redes-Sociales {
+        width: 90%;
+        position: relative;
+        margin-left: 0;
+    }
+
+
 }

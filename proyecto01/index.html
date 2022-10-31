@@ -6,28 +6,29 @@
     <title>Curriculum - Carlos Loor</title>
     <meta name="Curriculum" content="Informacion, Carrera, Carlos Loor" />
     <link rel="stylesheet" href="Styles\stylesheet.css" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
 </head>
 
 <body>
     <header>
-        <div></div>
-        <img src="Media\FotoPerfil.jpg" alt="Foto de Perfil" width="100" id="ProfilePic" />
+        <img src="Media\FotoPerfil.jpg" alt="Foto de Perfil" width="auto" id="ProfilePic" />
         <div id="Informacion-Basica">
-            <h1>Carlos Loor</h1>
+            <h1 id="Nombre">Carlos Loor</h1>
             <h4>ESTUDIANTE EN ING. EN CIENCIAS DE LA COMPUTACION</h4>
         </div>
     </header>
     <nav id="Navegacion">
         <ul id="AccesosRapidos">
-            <li class="Secciones"><a href="#ProfilePic">Formación Académica</a></li>
-            <li class="Secciones"><a href="#Certificados">Certificados</a></li>
+
+            <li class="Secciones"><a class="Link-Interno" href="#ProfilePic">Formación Académica</a></li>
+            <li class="Secciones"><a class="Link-Interno" href="#LINK-Cert">Certificados</a></li>
             <li class="Secciones">
-                <a href="#Certificados">Proyectos Realizados</a>
+                <a class="Link-Interno" href="#Certificados">Proyectos Realizados</a>
             </li>
-            <li class="Secciones"><a href="#Video">Contacto</a></li>
-            <li class="Secciones"><a href="#Perfil">Perfil</a></li>
-            <li class="Secciones"><a href="#Idiomas">Idiomas</a></li>
-            <li class="Secciones"><a href="#Referencias">Referencias</a></li>
+            <li class="Secciones"><a class="Link-Interno" href="#Video">Contacto</a></li>
+            <li class="Secciones"><a class="Link-Interno" href="#Perfil">Perfil</a></li>
+            <li class="Secciones"><a class="Link-Interno" href="#Idiomas">Idiomas</a></li>
+            <li class="Secciones"><a class="Link-Interno" href="#Referencias">Referencias</a></li>
         </ul>
     </nav>
     <section id="Cuerpo-Info">
@@ -65,7 +66,7 @@
                 <tr>
                     <th>Tercer Nivel</th>
                     <td>Universidad Politécnica del Litoral</td>
-                    <td>2019-Actualidad</td>
+                    <td id="LINK-Cert">2019-Actualidad</td>
                     <td>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15948.06066149371!2d-79.97883300289686!3d-2.1478802000000035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72f925e5bfdb%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Polit%C3%A9cnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses!2sec!4v1665607083640!5m2!1ses!2sec"
@@ -103,7 +104,8 @@
                     <input type="email" id="correoelectronico" name="correoelectronico" required="required"
                         class="Text-Form" />
                     <label for="Mensaje" class="Titulo-Form">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" rows="10" cols="50" class="Text-Form"></textarea>
+                    <textarea id="mensaje" name="mensaje" rows="10" cols="40" class="Text-Form"
+                        required="required"></textarea>
                     <button type="submit" name="enviar">Enviar</button>
                 </form>
             </section>
@@ -131,12 +133,14 @@
         <h5>Redes Sociales:</h5>
         <div id="Iconos-Redes">
             <a href="https://github.com/CarlosLoorB"><img src="Media\github.svg" alt="Icono-Github" class="icon"></a>
-            <a href="https://www.facebook.com/carmen.silva.79069/"><img src="Media\facebook.svg"
+            <a href="https://www.facebook.com/carmen.silva.79069/"><img src="Media\facebook.svg" width="auto"
                     alt="Icono-Facebook" class="icon"></a>
-            <a href="https://www.instagram.com/carlos_loor._.0/"><img src="Media\instagram.svg" alt="Icono-Instagram" class="icon"></a>
+            <a href="https://www.instagram.com/carlos_loor._.0/"><img src="Media\instagram.svg" alt="Icono-Instagram"
+                    class="icon"></a>
         </div>
 
     </section>
+
 </body>
 
 </html>
