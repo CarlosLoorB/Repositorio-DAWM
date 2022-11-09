@@ -99,11 +99,19 @@ a {
 
 .Titulo-Form {
     width: 100%;
+    
 }
 
 .Text-Form {
-    width: 100%;
+    width: 50%;
+    margin-right: 50%;
 }
+
+#mensaje {
+    width: 85%;
+    margin-right: 15%;
+}
+
 
 button {
     margin: 0% 40%;
