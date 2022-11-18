@@ -52,7 +52,7 @@ selectElement1.addEventListener('change', (event) => {
               <tr>
                 <td style="--start: ${tabla.market_data.sparkline_7d.price[0]}; --size: ${tabla.market_data.sparkline_7d.price[1]}"> <span class="data"> 1 </span> </td>
               </tr>
-              <tr>
+              <tr>  
                 <td style="--start: ${tabla.market_data.sparkline_7d.price[1]}; --size: ${tabla.market_data.sparkline_7d.price[2]}"> <span class="data"> 2 </span> </td>
               </tr>
               <tr>
