@@ -14,6 +14,10 @@
   <link rel="stylesheet" href="css/mdb.min.css" />
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="src\dist\charts.min.css">
+  <link rel="stylesheet" href="css\bonito.css">
+
+  src\dist
 </head>
 
 <body>
@@ -49,8 +53,8 @@
               <a class="nav-link" aria-current="page" href="#tabla-de-contenidos">Tabla Top 7</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#Paneles-Personalizados" rel="nofollow"
-                target="_blank">Paneles Personalizados</a>
+              <a class="nav-link" href="#Paneles-Personalizados" rel="nofollow" target="_blank">Paneles
+                Personalizados</a>
             </li>
           </ul>
 
@@ -89,22 +93,16 @@
             <div class="card">
 
               <div class="card-header bg-white py-3 dropdown">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-mdb-toggle="dropdown" data-mdb-auto-close="true"
-                    aria-expanded="false">
-                    Crypto #1
-                  </button>
-                  <ul class="dropdown-menu" id="drop1">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                  </ul>
-                </div>
+                <h4 class="text-center"> Cripto #1</h4>
+                <select class="form-select select1" aria-label="Default select example" id="drop1">
+                </select>
               </div>
 
               <div class="card-body">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
+                  <li class="list-group-item" id="tablamarket1">Feature</li>
+                  <li class="list-group-item" id="marketcap1"> </li>
                 </ul>
               </div>
 
@@ -125,23 +123,16 @@
             <div class="card border border-primary">
 
               <div class="card-header bg-white py-3">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-mdb-toggle="dropdown" data-mdb-auto-close="true"
-                    aria-expanded="false">
-                    Crypto #2
-                  </button>
-                  <ul class="dropdown-menu" id="drop2">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                  </ul>
-                </div>
+                <h4 class="text-center"> Cripto #2</h4>
+                <select class="form-select select2" aria-label="Default select example" id="drop2">
+                </select>
               </div>
 
               <div class="card-body">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Feature</li>
                   <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
+                  <li class="list-group-item" id="marketcap2"> </li>
                 </ul>
               </div>
 
@@ -162,24 +153,16 @@
             <div class="card">
 
               <div class="card-header bg-white py-3">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-primary dropdown-toggle" data-mdb-toggle="dropdown" data-mdb-auto-close="true"
-                    aria-expanded="false">
-                    Crypto #3
-                  </button>
-                  <ul class="dropdown-menu" id="drop3">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                  </ul>
-                </div>
+                <h4 class="text-center"> Cripto #3</h4>
+                <select class="form-select select3" aria-label="Default select example" id="drop3">
+                </select>
               </div>
 
               <div class="card-body">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">Feature</li>
                   <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
-                  <li class="list-group-item">Feature</li>
+                  <li class="list-group-item" id="marketcap3"> </li>
                 </ul>
               </div>
 
