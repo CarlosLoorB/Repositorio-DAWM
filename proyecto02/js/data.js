@@ -43,7 +43,7 @@ selectElement1.addEventListener('change', (event) => {
     .then(obj => {
       let tabla = obj;
       let valor = tabla.market_data.market_cap.usd
-      document.getElementById("marketcap1").textContent = "$" + valor
+      document.getElementById("marketcap1").textContent = "Market Cap :$ " + valor
       let tablaMarket = tabla.market_data.sparkline_7d.price
       let max = Math.trunc(Math.max(...tablaMarket))
       let tamano = String(Math.trunc(Math.max(...tablaMarket))).length;
@@ -64,39 +64,39 @@ selectElement1.addEventListener('change', (event) => {
 
             <tbody>
             <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[0]}; --size: ${tabla.market_data.sparkline_7d.price[1]}"> <span class="data"> 1 </span> </td>
+            <td style="--start: ${tablavisual[0]}; --size: ${tablavisual[1]}"> <span class="data"> 1 </span> </td>
           </tr>
           <tr>  
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[1]}; --size: ${tabla.market_data.sparkline_7d.price[2]}"> <span class="data"> 2 </span> </td>
+            <td style="--start: ${tablavisual[1]}; --size: ${tablavisual[2]}"> <span class="data"> 2 </span> </td>
           </tr>
           <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[2]}; --size: ${tabla.market_data.sparkline_7d.price[3]}"> <span class="data"> 3 </span> </td>
+            <td style="--start: ${tablavisual[2]}; --size: ${tablavisual[3]}"> <span class="data"> 3 </span> </td>
           </tr>
           <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[3]}; --size: ${tabla.market_data.sparkline_7d.price[4]}"> <span class="data"> 4 </span> </td>
+            <td style="--start: ${tablavisual[3]}; --size: ${tablavisual[4]}"> <span class="data"> 4 </span> </td>
           </tr>
           <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[4]}; --size: ${tabla.market_data.sparkline_7d.price[5]}"> <span class="data"> 5 </span> </td>
+            <td style="--start: ${tablavisual[4]}; --size: ${tablavisual[5]}"> <span class="data"> 5 </span> </td>
           </tr>
           <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[5]}; --size: ${tabla.market_data.sparkline_7d.price[6]}"> <span class="data"> 6 </span> </td>
+            <td style="--start: ${tablavisual[5]}; --size: ${tablavisual[6]}"> <span class="data"> 6 </span> </td>
           </tr>
           <tr>
-            <td style="--start: ${tabla.market_data.sparkline_7d.price[6]}; --size: ${tabla.market_data.sparkline_7d.price[7]}"> <span class="data"> 7 </span> </td>
+            <td style="--start: ${tablavisual[6]}; --size: ${tablavisual[7]}"> <span class="data"> 7 </span> </td>
           </tr> 
             </tbody>
           
           </table>`
       google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(function(){ drawChart(tabla.community_score)});
-      let div = '<div id="donutchart" style="width: auto; height: 200px;"></div>';
+      google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart1") });
+      let div = '<div id="donutchart1" style="width: auto; height: 200px;"></div>';
 
       document.getElementById("tablamarket1").innerHTML = ""
       document.getElementById("tablamarket1").innerHTML = grafico
       document.getElementById("pie1").innerHTML = div
 
       for (let i = 0; i < 7; i++) {
-        let elementoAct1 = tabla.market_data.sparkline_7d.price[i];
+        let elementoAct1 = tablavisual[i];
         console.log(elementoAct1)
 
       }
@@ -119,7 +119,63 @@ selectElement2.addEventListener('change', (event) => {
     .then(obj => {
       let tabla = obj;
       let valor2 = tabla.market_data.market_cap.usd
-      document.getElementById("marketcap2").textContent = "$" + valor2
+      document.getElementById("marketcap2").textContent = "Market Cap :$ " + valor2
+      let tablaMarket = tabla.market_data.sparkline_7d.price
+      let max = Math.trunc(Math.max(...tablaMarket))
+      let tamano = String(Math.trunc(Math.max(...tablaMarket))).length;
+      console.log(tamano + "tamano del maximo")
+      let tamanofinal = tamano + 1;
+      let tablavisual = tablaMarket.map((precio) => {
+        if (max >= 2) {
+          return (precio / Math.pow(10, tamanofinal));
+        }
+        else {
+          return precio;
+        }
+      })
+      console.log(tablaMarket)
+      console.log(tablavisual)
+      let grafico =
+        `<table class="charts-css line show-data-axes" id="my-chart">
+
+            <tbody>
+            <tr>
+            <td style="--start: ${tablavisual[0]}; --size: ${tablavisual[1]}"> <span class="data"> 1 </span> </td>
+          </tr>
+          <tr>  
+            <td style="--start: ${tablavisual[1]}; --size: ${tablavisual[2]}"> <span class="data"> 2 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[2]}; --size: ${tablavisual[3]}"> <span class="data"> 3 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[3]}; --size: ${tablavisual[4]}"> <span class="data"> 4 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[4]}; --size: ${tablavisual[5]}"> <span class="data"> 5 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[5]}; --size: ${tablavisual[6]}"> <span class="data"> 6 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[6]}; --size: ${tablavisual[7]}"> <span class="data"> 7 </span> </td>
+          </tr> 
+            </tbody>
+          
+          </table>`
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart2") });
+      let div = '<div id="donutchart2" style="width: auto; height: 200px;"></div>';
+
+      document.getElementById("tablamarket2").innerHTML = ""
+      document.getElementById("tablamarket2").innerHTML = grafico
+      document.getElementById("pie2").innerHTML = div
+
+      for (let i = 0; i < 7; i++) {
+        let elementoAct1 = tablavisual[i];
+        console.log(elementoAct1)
+
+      }
     }
     )
     .catch(error => {
@@ -136,7 +192,63 @@ selectElement3.addEventListener('change', (event) => {
     .then(obj => {
       let tabla = obj;
       let valor3 = tabla.market_data.market_cap.usd
-      document.getElementById("marketcap3").textContent = "$" + valor3
+      document.getElementById("marketcap3").textContent = "Market Cap :$ " + valor3
+      let tablaMarket = tabla.market_data.sparkline_7d.price
+      let max = Math.trunc(Math.max(...tablaMarket))
+      let tamano = String(Math.trunc(Math.max(...tablaMarket))).length;
+      console.log(tamano + "tamano del maximo")
+      let tamanofinal = tamano + 1;
+      let tablavisual = tablaMarket.map((precio) => {
+        if (max >= 2) {
+          return (precio / Math.pow(10, tamanofinal));
+        }
+        else {
+          return precio;
+        }
+      })
+      console.log(tablaMarket)
+      console.log(tablavisual)
+      let grafico =
+        `<table class="charts-css line show-data-axes" id="my-chart">
+
+            <tbody>
+            <tr>
+            <td style="--start: ${tablavisual[0]}; --size: ${tablavisual[1]}"> <span class="data"> 1 </span> </td>
+          </tr>
+          <tr>  
+            <td style="--start: ${tablavisual[1]}; --size: ${tablavisual[2]}"> <span class="data"> 2 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[2]}; --size: ${tablavisual[3]}"> <span class="data"> 3 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[3]}; --size: ${tablavisual[4]}"> <span class="data"> 4 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[4]}; --size: ${tablavisual[5]}"> <span class="data"> 5 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[5]}; --size: ${tablavisual[6]}"> <span class="data"> 6 </span> </td>
+          </tr>
+          <tr>
+            <td style="--start: ${tablavisual[6]}; --size: ${tablavisual[7]}"> <span class="data"> 7 </span> </td>
+          </tr> 
+            </tbody>
+          
+          </table>`
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart3") });
+      let div = '<div id="donutchart3" style="width: auto; height: 200px;"></div>';
+
+      document.getElementById("tablamarket3").innerHTML = ""
+      document.getElementById("tablamarket3").innerHTML = grafico
+      document.getElementById("pie3").innerHTML = div
+
+      for (let i = 0; i < 7; i++) {
+        let elementoAct1 = tabla.market_data.sparkline_7d.price[i];
+        console.log(elementoAct1)
+
+      }
     }
     )
     .catch(error => {
@@ -145,11 +257,11 @@ selectElement3.addEventListener('change', (event) => {
 });
 
 
-function drawChart(pos1) {
+function drawChart(pos1,name) {
   let tablagraph = [
-    ['Task', 'Hours per Day'],
+    ['Sentimiento', 'Clasificacion'],
     ['Positivo', pos1],
-    ['Negativo', (100-pos1)]
+    ['Negativo', (100 - pos1)]
   ]
   var data = google.visualization.arrayToDataTable(tablagraph);
 
@@ -158,6 +270,6 @@ function drawChart(pos1) {
     pieHole: 0.4,
   };
 
-  var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+  var chart = new google.visualization.PieChart(document.getElementById(name));
   chart.draw(data, options);
 }
