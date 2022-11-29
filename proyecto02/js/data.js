@@ -86,7 +86,16 @@ selectElement1.addEventListener('change', (event) => {
           </tr> 
             </tbody>
           
-          </table>`
+          </table>
+          
+          <span> 1 = $ ${tablaMarket[1]}</span><br>
+          <span> 2 = $ ${tablaMarket[2]}</span><br>
+          <span> 3 = $ ${tablaMarket[3]}</span><br>
+          <span> 4 = $ ${tablaMarket[4]}</span><br>
+          <span> 5 = $ ${tablaMarket[5]}</span><br>
+          <span> 6 = $ ${tablaMarket[6]}</span><br>
+          <span> 7 = $ ${tablaMarket[7]}</span><br>
+          `
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart1") });
       let div = '<div id="donutchart1" style="width: auto; height: 200px;"></div>';
@@ -162,7 +171,15 @@ selectElement2.addEventListener('change', (event) => {
           </tr> 
             </tbody>
           
-          </table>`
+          </table>
+          <span> 1 = $ ${tablaMarket[1]}</span><br>
+          <span> 2 = $ ${tablaMarket[2]}</span><br>
+          <span> 3 = $ ${tablaMarket[3]}</span><br>
+          <span> 4 = $ ${tablaMarket[4]}</span><br>
+          <span> 5 = $ ${tablaMarket[5]}</span><br>
+          <span> 6 = $ ${tablaMarket[6]}</span><br>
+          <span> 7 = $ ${tablaMarket[7]}</span><br>
+          `
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart2") });
       let div = '<div id="donutchart2" style="width: auto; height: 200px;"></div>';
@@ -235,7 +252,15 @@ selectElement3.addEventListener('change', (event) => {
           </tr> 
             </tbody>
           
-          </table>`
+          </table>
+          <span> 1 = $ ${tablaMarket[1]}</span><br>
+          <span> 2 = $ ${tablaMarket[2]}</span><br>
+          <span> 3 = $ ${tablaMarket[3]}</span><br>
+          <span> 4 = $ ${tablaMarket[4]}</span><br>
+          <span> 5 = $ ${tablaMarket[5]}</span><br>
+          <span> 6 = $ ${tablaMarket[6]}</span><br>
+          <span> 7 = $ ${tablaMarket[7]}</span><br>
+          `
       google.charts.load("current", { packages: ["corechart"] });
       google.charts.setOnLoadCallback(function () { drawChart(tabla.community_score,"donutchart3") });
       let div = '<div id="donutchart3" style="width: auto; height: 200px;"></div>';
