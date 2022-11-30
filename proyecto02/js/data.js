@@ -291,7 +291,7 @@ function drawChart(pos1,name) {
   var data = google.visualization.arrayToDataTable(tablagraph);
 
   var options = {
-    title: 'My Daily Activities',
+    title: 'Sentimiento del consumidor',
     pieHole: 0.4,
   };
 
