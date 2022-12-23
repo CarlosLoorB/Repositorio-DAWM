@@ -18,5 +18,7 @@ export class Top7Component implements OnInit {
       }
     })
   }
+  
+  
 
 }
