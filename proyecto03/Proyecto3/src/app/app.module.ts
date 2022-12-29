@@ -22,6 +22,8 @@ import { DatosComponent } from './components/datos/datos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EsperaComponent } from './espera/espera.component';
 import { PiechartComponent } from './components/piechart/piechart.component';
+import { TarjetaComponent } from './components/tarjeta/tarjeta.component';
+import { LineaComponent } from './components/linea/linea.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { PiechartComponent } from './components/piechart/piechart.component';
     PanelesComponent,
     DatosComponent,
     PiechartComponent,
+    TarjetaComponent,
+    LineaComponent,
   ],
   imports: [
     BrowserModule,

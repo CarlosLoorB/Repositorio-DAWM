@@ -1,4 +1,4 @@
-import { Component, OnChanges, ViewChild } from "@angular/core";
+import { Component, Input, OnChanges, OnInit, ViewChild } from "@angular/core";
 import { ChartComponent } from "ng-apexcharts";
 
 import {
@@ -6,7 +6,7 @@ import {
   ApexResponsive,
   ApexChart
 } from "ng-apexcharts";
-import { ApexTitleSubtitle } from "ng-apexcharts/public_api";
+import { ApexAxisChartSeries, ApexTitleSubtitle } from "ng-apexcharts/public_api";
 
 export type ChartOptions = {
   series: ApexNonAxisChartSeries;
@@ -20,18 +20,15 @@ export type ChartOptions = {
   templateUrl: './piechart.component.html',
   styleUrls: ['./piechart.component.css']
 })
-export class PiechartComponent {
+export class PiechartComponent{
 
-  /*series !:ApexNonAxisChartSeries;
-  chart!: ApexChart;
-  chartlabels!: string[];*/
 
+  @Input() series!: ApexAxisChartSeries | ApexNonAxisChartSeries;
+  
   charTitle: ApexTitleSubtitle = {
     text: "Sentimiento del comprador",
     align: "center"
   };
-
-  series: ApexNonAxisChartSeries = [25,25];
 
   chart: ApexChart = {
     type: "pie"
@@ -39,5 +36,10 @@ export class PiechartComponent {
 
   chartlabels: string[] = ["Positivo","Negativo"]; 
 
-  
+
+  /*series !:ApexNonAxisChartSeries;
+  chart!: ApexChart;
+  chartlabels!: string[];*/
+
+
 }

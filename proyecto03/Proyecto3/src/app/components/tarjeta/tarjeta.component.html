@@ -1,0 +1,12 @@
+<div id="cuerpo" class="justify-content-center ">
+<mat-form-field appearance="fill" class="justify-content-center ">
+    <mat-label>Escoja su crypto:</mat-label>
+    <mat-select [value]="cryptoselect" (selectionChange)="obtenerdata($event.value.id)" (selectionChange)="cryptoselect = $event.value">
+      <mat-option *ngFor="let crypto of cryptoList" [value]="crypto"> {{crypto.name}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <app-piechart [series]="SeriesData"></app-piechart>
+  <h3 class="text-center">Market Cap:</h3>  
+  <p class="card-text text-center" *ngIf="cryptoselect">${{cryptoselect.market_cap}}</p>  
+
+</div>

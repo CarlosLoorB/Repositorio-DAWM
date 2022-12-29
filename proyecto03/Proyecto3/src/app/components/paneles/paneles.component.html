@@ -1,35 +1,26 @@
-<div id="cuerpo" class="container justify-content-md-center align-items-center">
+<div id="cuerpo" class="container ">
     <div class="row">
       <div class="col-sm">
         <div class="card">
             <div class="card-body">
               <h1 class="card-title">Crypto #1</h1>
-              <mat-form-field appearance="fill">
-                <mat-label>Crypto #1</mat-label>
-                <mat-select [value]="cryptoselect1" (selectionChange)="obtenerdata($event.value.id)" (selectionChange)="cryptoselect1 = $event.value">
-                  <mat-option *ngFor="let crypto of cryptoList" [value]="crypto"> {{crypto.name}} </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <app-piechart></app-piechart>
-              <p class="card-text">${{cryptoselect1.market_cap}}</p>
+              <app-tarjeta></app-tarjeta>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary">Button</button>
+              <h1 class="card-title">Crypto #2</h1>
+              <app-tarjeta></app-tarjeta>
             </div>
           </div>
       </div>
       <div class="col-sm">
         <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary">Button</button>
+              <h1 class="card-title">Crypto #3</h1>
+              <app-tarjeta></app-tarjeta>
             </div>
           </div>
       </div>

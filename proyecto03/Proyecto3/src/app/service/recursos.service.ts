@@ -25,9 +25,10 @@ export class RecursosService {
         .subscribe((res) => {
           if (res instanceof HttpErrorResponse)
             reject({ error: res.error, status: res.status });
-          else resolve(res);
-        })
-    })
+          else
+            resolve(res);
+        });
+    });
   }
 
 

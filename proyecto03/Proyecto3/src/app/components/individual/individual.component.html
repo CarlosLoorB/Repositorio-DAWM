@@ -1,7 +1,51 @@
-<mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field>
+<div id="cuerpo" class="container justify-content-md-center align-items-center">
+  <div class="row" id="selection">
+    <mat-form-field appearance="fill" class="justify-content-center ">
+      <mat-label>Escoja su crypto:</mat-label>
+      <mat-select [value]="cryptoselect" (selectionChange)="obtenerdata(($event.value).id)"
+        (selectionChange)="cryptoselect = $event.value">
+        <mat-option *ngFor="let crypto of cryptoList" [value]="crypto"> {{crypto.name}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="row" id="graficas">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Sentimiento del Comprador:</h1>
+          <app-piechart [series]="SeriesData"></app-piechart>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Tabla de precios: </h1>
+          <app-linea [series]="SeriesDataLine"></app-linea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row" id="Market_cap">
+    <h3>Marketcap: </h3>
+    <p *ngIf="cryptoselect">${{cryptoselect.market_cap}}</p>
+  </div>
+  <div class="row" id="Price">
+    <h3>Price: </h3>
+    <p *ngIf="cryptoselect">${{cryptoselect.current_price}}</p>
+  </div>
+  <div class="row" id="Price">
+    <div class="col-sm">
+      <div class="col-sm">
+        <h3>24h High:</h3>
+        <p *ngIf="cryptoselect">${{cryptoselect.high_24h}}</p>
+      </div>
+    </div>
+    <div class="col-sm">
+      <h3>24h Low:</h3>
+      <p *ngIf="cryptoselect">${{cryptoselect.low_24h}}</p>
+    </div>
+  </div>
+</div>
