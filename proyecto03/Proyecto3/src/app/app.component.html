@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-drawer #enlaces class="example-sidenav" mode="over">
+    <ul>
+      <li><a routerLink="/Top7">Top 7</a></li>
+      <li><a routerLink="/Paneles">Paneles </a></li>
+      <li><a routerLink="/Individual">Vista Individual </a></li>
+      <li><a routerLink="/Datos">Informacion </a></li>
+    </ul>
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Album fotográfico</span>
+  </mat-toolbar>
+  <div class="row align-items-center">
+    <router-outlet></router-outlet>
+  </div>
+  
+
+</mat-drawer-container>
