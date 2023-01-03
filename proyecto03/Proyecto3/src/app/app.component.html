@@ -1,11 +1,13 @@
 <mat-drawer-container class="example-container" autosize>
 
   <mat-drawer #enlaces class="example-sidenav" mode="over">
-    <ul>
-      <li><a routerLink="/Top7">Top 7</a></li>
-      <li><a routerLink="/Paneles">Paneles </a></li>
-      <li><a routerLink="/Individual">Vista Individual </a></li>
-      <li><a routerLink="/Datos">Informacion </a></li>
+    <ul class="list-group list-group-flush">
+      <br>
+      <br>
+      <li class="list-group-item"><a routerLink="/Top7">Top 7</a></li>
+      <li class="list-group-item"><a routerLink="/Paneles">Paneles </a></li>
+      <li class="list-group-item"><a routerLink="/Individual">Vista Individual </a></li>
+      <li class="list-group-item"><a routerLink="/Datos">Informacion </a></li>
     </ul>
   </mat-drawer>
 
@@ -13,7 +15,7 @@
     <button mat-icon-button color="accent" aria-label="menu" (click)="menu(enlaces)">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>Album fotográfico</span>
+    <span>Coin Looker</span>
   </mat-toolbar>
   <div class="row align-items-center">
     <router-outlet></router-outlet>
