@@ -24,14 +24,13 @@ export class TarjetaComponent {
   }
 
   async obtenerdata(id: String) {
-    let dataCrypto: any = [];
+    /* let dataCrypto: any = []; */
     console.log(id)
     let data =  await this.recursos.getChosenDataSafe(id)
-    dataCrypto = JSON.parse(JSON.stringify(data));
-    let numbers = dataCrypto.community_score
+    /* dataCrypto = data; */
+    let numbers = data.community_score
     this.SeriesData = [numbers,(100-numbers)]   
-    
-        
+            
   }
 
 

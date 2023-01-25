@@ -20,9 +20,6 @@ export class EsperaComponent implements OnInit {
       console.log(dataCryptos)
     }
     )
-    setTimeout(() => {
-      this.router.navigate(['Top7']);
-    }, 1500);
   }
 
   
