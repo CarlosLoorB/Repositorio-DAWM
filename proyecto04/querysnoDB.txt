@@ -1,0 +1,7 @@
+// get para cada uno de los usuarios 
+https://nodb-proyecto-default-rtdb.firebaseio.com/ordenes.json?orderBy=%22customerNumber%22&equalTo=201
+
+
+// get por producto 
+https://nodb-proyecto-default-rtdb.firebaseio.com/ordenes.json?orderBy=%22productName%22&equalTo=%221969%20Harley%20Davidson%20Ultimate%20Chopper%22
+

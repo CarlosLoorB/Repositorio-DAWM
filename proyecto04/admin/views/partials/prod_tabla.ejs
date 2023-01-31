@@ -1,0 +1,44 @@
+<main class="col-sm mx-2">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Clientes</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Direccion</th>
+                        <th>Ciudad</th>
+                        <th>Codigo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% arrClient.forEach((cliente)=> { %>
+                        <tr>
+                            <td>
+                                <%= cliente.customerName %>
+                            </td>
+                            <td>
+                                <%= cliente.addresLine1 %>
+                            </td>
+                            <td>
+                                <%= cliente.city %>
+                            </td>
+                            <td>
+                                <a href="/ordenes/<%= cliente.customerNumber %>" class="btn btn-primary btn-sm active" role="button"
+                                    aria-pressed="true">Ordenes</a>
+                                <a href="/productos/<%= cliente.customerNumber %>" class="btn btn-secondary btn-sm active" role="button"
+                                    aria-pressed="true">Productos</a>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

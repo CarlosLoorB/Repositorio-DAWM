@@ -2,19 +2,16 @@ var express = require('express');
 const axios = require('axios')
 var router = express.Router();
 
-const multer  = require('multer')
+const multer = require('multer')
 const FormData = require('form-data');
+const { Router } = require('express');
 const upload = multer()
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', async function (req, res, next) {
 
-router.get('/photos', async function(req, res, next) {
-  
-  const URL = 'http://localhost:4444/fotos/findAll/json'
+  const URL = 'http://localhost:4444/rest/productos/findAllCustomers/json'
   const config = {
     proxy: {
       host: 'localhost',
@@ -23,109 +20,58 @@ router.get('/photos', async function(req, res, next) {
   }
   const response = await axios.get(URL, config)
 
-  response.data.map( item => { item.url = 'http://localhost:4444/'+item.ruta.replace('public/','') } )
+  res.render('index', { title: 'Clientes', clientes: response.data });
+});
 
-  
-  res.render('fotos', { title: 'Fotos', fotos: response.data });
+/* Get de Ordenes*/
+router.get('/ordenes/:id', async function (req, res, next) {
+
+  let id = req.params.id
+
+  const URL = 'https://nodb-proyecto-default-rtdb.firebaseio.com/ordenes.json?orderBy=%22customerNumber%22&equalTo=' + id
+
+  const response = await axios.get(URL);
+
+  let respuesta = Object.values(response.data);
+  let shippedElem = [];
+  let infoPrecios = [];
+  respuesta.forEach(elems => {
+    if (elems.status == "Shipped") {
+      shippedElem.push(elems)
+      let info = [];
+      info.push(elems.priceEach);
+      info.push(elems.quantityOrdered);
+      infoPrecios.push(info);
+    }
+  });
+
+  const URL2 = 'http://localhost:4445/rest/productos/calcularPrecio/json'
+
+  const response2 = await axios.post(URL2, infoPrecios);
+
+  res.render('order', { title: 'Ordenes', Ordenes: shippedElem , Precio: response2.data });
 })
 
-router.get('/photos/add', function(req, res, next) {
-  res.render('fotos_formulario', { title: 'Express' });
-});
+router.get('/productos/:id', async function (req, res, next) {
 
-router.post('/photos/save', upload.single('route'), async function(req, res, next) {  
+  let id = req.params.id
 
-  let { title, description, rate } = req.body
-  let { buffer, originalname } = req.file
+  const URL = 'https://nodb-proyecto-default-rtdb.firebaseio.com/ordenes.json?orderBy=%22customerNumber%22&equalTo=' + id
 
-
-  const URL = 'http://localhost:4444/rest/fotos/save'
-  
-  let data = new FormData()
-  data.append("titulo", title)
-  data.append("descripcion", description)
-  data.append("calificacion", rate)
-  data.append("ruta", originalname)
-  data.append("archivo", buffer, originalname)
-  
-  const config = {
-    headers: data.getHeaders(),
-    proxy: {
-      host: 'localhost',
-      port: 4444
+  const response = await axios.get(URL);
+  let respuesta = Object.values(response.data);
+  let productos = []
+  respuesta.forEach(elems => {
+    if (!productos.includes(elems.productName)) {
+      productos.push(elems.productName);
     }
-  }
-  const response = await axios.post(URL, data, config);
+  });
 
+  res.render('product', { title: 'Productos', Products: productos });
+})
 
-  if(response.status == '200' && response.statusText == 'OK') {
-    res.redirect('/photos')
-  } else {
-    res.redirect('/') 
-  }
-
-    
-});
-
-//es el nuevo put
-
-router.post('/photos/save', upload.single('route'), async function(req, res, next) {  
-
-  let { title, description, rate } = req.body
-  let { buffer, originalname } = req.file
-
-
-  const URL = 'http://localhost:4444/rest/fotos/update'
-  
-  let data = new FormData()
-  data.append("titulo", title)
-  data.append("descripcion", description)
-  data.append("calificacion", rate)
-  data.append("ruta", originalname)
-  data.append("archivo", buffer, originalname)
-  
-  const config = {
-    headers: data.getHeaders(),
-    proxy: {
-      host: 'localhost',
-      port: 4444
-    }
-  }
-  const response = await axios.post(URL, data, config);
-
-
-  if(response.status == '200' && response.statusText == 'OK') {
-    res.redirect('/photos')
-  } else {
-    res.redirect('/') 
-  }
-
-    
-});
-
-// es el nuevo delete 
-
-router.delete('photos/delete', async function(req, res, next) {  
-
-  let id  = req.body;
-    
-  const URL = 'http://localhost:4444/rest/fotos/delete' + id
-
-  const config = {
-    proxy: {
-      host: 'localhost',
-      port: 4444
-    }
-  }
-  const response = await axios.delete(URL, config); 
-
-  if(response.status == '200' && response.statusText == 'OK') {
-    res.redirect('/photos')
-  } else {
-    res.redirect('/') 
-  }
-
-    
-});
+router.get('/regresar', async function (req, res, next) {
+  res.redirect('/')
+})
 
 module.exports = router;
